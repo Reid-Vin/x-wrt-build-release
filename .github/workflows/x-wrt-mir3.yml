@@ -67,6 +67,7 @@ jobs:
       run: |
         git clone --depth 1 --branch `cat release.tag` https://github.com/Reid-Vin/x-wrt.git
         sudo mkdir -p x-wrt/package/lean
+        sudo chown $USER:$GROUPS x-wrt/package/lean
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF x-wrt/feeds.conf.default
